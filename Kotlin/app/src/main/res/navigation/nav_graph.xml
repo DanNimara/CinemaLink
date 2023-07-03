@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/feedFragment"
+    android:id="@+id/nav_graph">
+
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.dnimara.cinemalink.ui.feedscreen.FeedFragment"
+        android:label="Feed"
+        tools:layout="@layout/fragment_feed" >
+        <action
+            android:id="@+id/action_feedFragment_to_createPostFragment"
+            app:destination="@id/createPostFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_postFragment"
+            app:destination="@id/postFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.dnimara.cinemalink.ui.feedscreen.PostFragment"
+        android:label="Post"
+        tools:layout="@layout/fragment_post">
+        <argument
+            android:name="id"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_postFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+        <action
+            android:id="@+id/action_postFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+        <action
+            android:id="@+id/action_postFragment_to_feedFragment"
+            app:destination="@id/feedFragment"
+            app:popUpTo="@id/feedFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchMovieFragment"
+        android:name="com.dnimara.cinemalink.ui.searchmoviescreen.SearchMovieFragment"
+        android:label="Search movies"
+        tools:layout="@layout/fragment_search_movie" >
+        <action
+            android:id="@+id/action_searchMovieFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.dnimara.cinemalink.ui.moviescreen.MovieFragment"
+        tools:layout="@layout/fragment_movie" >
+        <deepLink
+            android:id="@+id/deep_link"
+            android:autoVerify="true"
+            app:uri="https://cinemaalink.page.link/?link=https://cinemalink.com/movie/?id%3Dtt0145487"/>
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_movieFragment_to_reviewsFragment"
+            app:destination="@id/reviewsFragment" />
+        <action
+            android:id="@+id/action_movieFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createPostFragment"
+        android:name="com.dnimara.cinemalink.ui.feedscreen.CreatePostFragment"
+        android:label="Create post"
+        tools:layout="@layout/fragment_create_post">
+        <action
+            android:id="@+id/action_createPostFragment_to_feedFragment"
+            app:destination="@id/feedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.dnimara.cinemalink.ui.profilescreen.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile">
+        <argument
+            android:name="userId"
+            app:argType="long"/>
+        <action
+            android:id="@+id/action_profileFragment_to_feedFragment"
+            app:destination="@id/feedFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_userFragment"
+            app:destination="@id/userFragment"
+            app:popUpTo="@id/profileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_postFragment"
+            app:destination="@id/postFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.dnimara.cinemalink.ui.userscreen.UserFragment"
+        tools:layout="@layout/fragment_user">
+        <argument
+            android:name="userId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_userFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+        <action
+            android:id="@+id/action_userFragment_self"
+            app:destination="@id/userFragment"
+            app:popUpTo="@id/userFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_userFragment_to_postFragment"
+            app:destination="@id/postFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchUserFragment"
+        android:name="com.dnimara.cinemalink.ui.searchuserscreen.SearchUserFragment"
+        android:label="Search users"
+        tools:layout="@layout/fragment_search_user">
+        <action
+            android:id="@+id/action_searchUserFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recommendationFragment"
+        android:name="com.dnimara.cinemalink.ui.recommendationscreen.RecommendationFragment"
+        android:label="Recommendations"
+        tools:layout="@layout/fragment_recommendation" >
+        <action
+            android:id="@+id/action_recommendationFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/watchlistsFragment"
+        android:name="com.dnimara.cinemalink.ui.watchlistscreens.WatchlistsFragment"
+        android:label="Watchlists"
+        tools:layout="@layout/fragment_watchlists">
+        <action
+            android:id="@+id/action_watchlistsFragment_to_showWatchlistFragment"
+            app:destination="@id/showWatchlistFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showWatchlistFragment"
+        android:name="com.dnimara.cinemalink.ui.watchlistscreens.ShowWatchlistFragment"
+        tools:layout="@layout/fragment_show_watchlist">
+        <argument
+            android:name="id"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_showWatchlistFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+        <action
+            android:id="@+id/action_showWatchlistFragment_to_watchlistsFragment"
+            app:destination="@id/watchlistsFragment"
+            app:popUpTo="@id/watchlistsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/collectionFragment"
+        android:name="com.dnimara.cinemalink.ui.collectionscreen.CollectionFragment"
+        android:label="Collection"
+        tools:layout="@layout/fragment_collection" >
+        <action
+            android:id="@+id/action_collectionFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reviewsFragment"
+        android:name="com.dnimara.cinemalink.ui.reviewscreen.ReviewsFragment"
+        android:label="Reviews"
+        tools:layout="@layout/fragment_reviews" >
+        <argument
+            android:name="movieId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_reviewsFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+        <action
+            android:id="@+id/action_reviewsFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="com.dnimara.cinemalink.ui.reviewscreen.ReviewFragment"
+        android:label="Review"
+        tools:layout="@layout/fragment_review">
+        <action
+            android:id="@+id/action_reviewFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+        <argument
+            android:name="id"
+            app:argType="long" />
+    </fragment>
+
+</navigation>

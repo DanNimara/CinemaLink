@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="watchlist"
+            type="com.dnimara.cinemalink.ui.watchlistscreens.WatchlistDto" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color_dark">
+
+        <ImageView
+            android:id="@+id/iv_watchlist_image_item"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginBottom="2.5dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/watchlist_item"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_info_watchlist"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/iv_watchlist_image_item"
+            app:layout_constraintStart_toEndOf="@id/iv_watchlist_image_item"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_watchlist_name_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                tools:text="Horror movies are not good for your soul believe me"
+                android:textStyle="bold"
+                android:text="@{watchlist.name}"/>
+
+            <TextView
+                android:id="@+id/tv_watchlist_created_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:layout_marginEnd="5dp"
+                android:layout_gravity="end"
+                tools:text="Created 09/10/2022"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_movie_number_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/ll_info_watchlist"
+            app:layout_constraintStart_toEndOf="@id/iv_watchlist_image_item"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Contains 100 movie(s)."
+            android:text="@{@string/contains_movies(watchlist.movieCount)}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

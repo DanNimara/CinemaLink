@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="movie_tag"
+            type="com.dnimara.cinemalink.ui.feedscreen.MovieTagDto" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_search_movie"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color_dark">
+
+        <ImageView
+            android:id="@+id/iv_movie_search_tag_poster"
+            android:layout_width="75dp"
+            android:layout_height="100dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:imageUrl="@{movie_tag.posterUrl}"/>
+
+        <TextView
+            android:id="@+id/tv_movie_search_tag_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            app:layout_constraintStart_toEndOf="@+id/iv_movie_search_tag_poster"
+            app:layout_constraintTop_toTopOf="@id/iv_movie_search_tag_poster"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@{movie_tag.title}"
+            tools:text="Batman" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

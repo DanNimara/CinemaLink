@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="recommendation"
+            type="com.dnimara.cinemalink.ui.recommendationscreen.RecommendationDto" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_recommendation_item"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color_dark">
+
+        <ImageView
+            android:id="@+id/iv_recommendation_poster"
+            android:layout_width="125dp"
+            android:layout_height="150dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:imageUrl="@{recommendation.posterUrl}"/>
+
+        <TextView
+            android:id="@+id/tv_recommendation_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toBottomOf="@id/iv_recommendation_poster"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="12sp"
+            android:textAlignment="center"
+            android:text="@{recommendation.title}"
+            tools:text="Batman" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

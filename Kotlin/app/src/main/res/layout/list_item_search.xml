@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="movie"
+            type="com.dnimara.cinemalink.ui.moviescreen.MovieSummaryDto" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_search_movie"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color_dark">
+
+        <ImageView
+            android:id="@+id/iv_search_poster"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:imageUrl="@{movie.posterUrl}"/>
+
+        <TextView
+            android:id="@+id/tv_search_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:textStyle="bold"
+            android:text="@{movie.releaseYear != null ? @string/movie_title_show(movie.title, movie.releaseYear) : @string/movie_title_no_year_show(movie.title)}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_search_poster"
+            tools:text="Batman" />
+
+        <TextView
+            android:id="@+id/tv_search_outline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="12dp"
+            app:fontFamily="@font/roboto_italic"
+            android:justificationMode="inter_word"
+            android:text="@{@string/identation_small(movie.outline)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_search_poster"
+            app:layout_constraintTop_toBottomOf="@id/tv_search_title"
+            tools:text="Batman" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

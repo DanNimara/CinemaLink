@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">Cinema Link</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="access_token">access_token</string>
+    <string name="refresh_token">Refresh token</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Search…</string>
+    <string name="login_button">Login</string>
+    <string name="register_button">Register</string>
+    <string name="welcome_message">Welcome to CinemaLink!</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="profile_pic">Pick a profile picture</string>
+    <string name="submit">Submit</string>
+    <string name="password">Password</string>
+    <string name="content">Post content…</string>
+    <string name="share">share</string>
+    <string name="available">Available</string>
+    <string name="unvailable">Unvailable</string>
+    <string name="available_on_netflix">available on netflix</string>
+    <string name="available_on_hbo_max">available on hbo max</string>
+    <string name="available_on_disney">available on disney+</string>
+    <string name="available_on_amazon_prime">available on amazon prime</string>
+    <string name="follow">follow</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <!--to toggle the open close button
+        of the navigation drawer-->
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="feed">Feed</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+    <string name="search_users">Search users</string>
+    <string name="post">post</string>
+    <string name="tag_movies">Tag movies</string>
+    <string name="identation">\t\t\t\t%s</string>
+    <string name="identation_small">\t\t%s</string>
+    <string name="watchlists">Watchlists</string>
+    <string name="contains_movies">Contains %s movie(s).</string>
+    <string name="created_watchlist">Created on %s</string>
+    <string name="release_date">Release Date: %s</string>
+    <string name="no_release_date">No release date</string>
+    <string name="delete">delete</string>
+    <string name="movie_title_show">%s (%s)</string>
+    <string name="movie_title_no_year_show">%s</string>
+    <string name="watchlist_note">Note: %s</string>
+    <string name="rename">rename</string>
+    <string name="ok">ok</string>
+    <string name="cancel">cancel</string>
+    <string name="comment">Comment</string>
+    <string name="try_out">Try Out</string>
+    <string name="collection">Collection</string>
+    <string name="leave_your_review">Leave your review...</string>
+    <string name="would_you_recommend_it_to_a_friend">Would you recommend it to a friend?</string>
+    <string name="would_recommend"><![CDATA[<b> Would <font color="#13AE4B">recommend</font>! </b>]]></string>
+    <string name="would_not_recommend"><![CDATA[<b> Would <font color="#C60505">not recommend</font>! </b>]]></string>
+    <string name="make_a_new_post">make a new post</string>
+    <string name="like">%s like</string>
+    <string name="likes">%s likes</string>
+    <string name="dislike">%s dislike</string>
+    <string name="dislikes">%s dislikes</string>
+    <string name="count_comment">%s comment</string>
+    <string name="comments">%s comments</string>
+    <string name="following_stat">%s Following</string>
+    <string name="followers_stat">%s Followers</string>
+    <string name="create">create</string>
+    <string name="name">Name</string>
+    <string name="edit">edit</string>
+    <string name="edited">Edited</string>
+    <string name="movie">Movie</string>
+    <string name="following">Following</string>
+    <string name="rate">rate</string>
+    <string name="share_content">%s said: \"%s\" about %s. Shared from CinemaLink!</string>
+    <string name="share_content_no_tag">%s said: \"%s\". Shared from CinemaLink!</string>
+</resources>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "818779987958",
+    "project_id": "cinema-link",
+    "storage_bucket": "cinema-link.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818779987958:android:da8131ed31671b905531d7",
+        "android_client_info": {
+          "package_name": "com.dnimara.cinemalink"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818779987958-du91kknf3vgba29e4f4at692jdcle9tf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dnimara.cinemalink",
+            "certificate_hash": "0a4ef0b01ff86765ffc57ba51b0eaa282432fb6b"
+          }
+        },
+        {
+          "client_id": "818779987958-r7vob1erqsbislnu717cuikoo1pctr9s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnJ-ayb-F_vbKSA_0vB6i3shJ9oM1HlS0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818779987958-r7vob1erqsbislnu717cuikoo1pctr9s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

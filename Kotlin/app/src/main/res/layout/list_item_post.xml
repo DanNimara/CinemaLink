@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="post"
+            type="com.dnimara.cinemalink.domain.FeedPost" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_feed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:background="#121212">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_feed_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_feed_profile_pic"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitCenter"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:imageUrl="@{post.userProfilePicUrl}"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/tv_feed_poster_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toEndOf="@+id/iv_feed_profile_pic"
+                app:layout_constraintTop_toTopOf="@id/iv_feed_profile_pic"
+                android:text="@{post.username}"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:exitFadeDuration="200"
+                android:background="@drawable/tv_clicked"
+                tools:text="BatmanBatmanBatman" />
+
+            <ImageButton
+                android:id="@+id/ib_edit_feed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:backgroundTint="@color/blue_700"
+                android:src="@drawable/ic_edit_10"
+                app:layout_constraintTop_toTopOf="@id/iv_feed_profile_pic"
+                app:layout_constraintEnd_toStartOf="@id/ib_delete_feed"/>
+
+            <ImageButton
+                android:id="@+id/ib_delete_feed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:backgroundTint="@color/remove_button_tint"
+                android:src="@drawable/ic_close_10"
+                app:layout_constraintTop_toTopOf="@id/iv_feed_profile_pic"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_feed_created"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toEndOf="@+id/iv_feed_profile_pic"
+                app:layout_constraintTop_toBottomOf="@id/tv_feed_poster_username"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Batman" />
+
+            <TextView
+                android:id="@+id/tv_tags_feed_item"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toEndOf="@+id/iv_feed_profile_pic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_feed_created"
+                tools:text="Referencing: Planet of the Apes, Tenet, Star Wars IX: Rise of Skywalker, Jurassic Park"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <kr.co.prnd.readmore.ReadMoreTextView
+            android:id="@+id/tv_feed_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="2dp"
+            app:layout_constraintTop_toBottomOf="@id/cl_feed_header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:readMoreColor="@color/orange_200"
+            app:readMoreMaxLine="12"
+            app:readMoreText="View more..."
+            android:text="@{post.content}"
+            tools:text="Batman is having a nice time by the beach with his
+            butler Alfred and Robin." />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_feed_actions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_feed_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageButton
+                android:id="@+id/like_feed_post_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/blue_200"
+                android:src="@drawable/ic_thumb_up_24"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageButton
+                android:id="@+id/dislike_feed_post_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/dislike_red"
+                android:src="@drawable/ic_thumb_down_24"
+                app:layout_constraintTop_toTopOf="@id/like_feed_post_button"
+                app:layout_constraintStart_toEndOf="@id/like_feed_post_button"
+                />
+            <ImageButton
+                android:id="@+id/comment_feed_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/purple_comment"
+                android:shadowColor="@color/white"
+                android:elevation="20dp"
+                android:src="@drawable/ic_comment_24"
+                app:layout_constraintTop_toTopOf="@id/dislike_feed_post_button"
+                app:layout_constraintStart_toEndOf="@id/dislike_feed_post_button"
+                app:layout_constraintEnd_toStartOf="@id/share_feed_button"
+                />
+
+            <ImageButton
+                android:id="@+id/share_feed_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/orange_200"
+                android:src="@drawable/ic_share_24"
+                app:layout_constraintTop_toTopOf="@id/comment_feed_button"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/cl_feed_actions"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textStyle="bold"
+                tools:text="100 like(s)"
+                android:text="@{post.likes != 1 ? @string/likes(post.likes) : @string/like(post.likes)}"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/hint_color"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textStyle="bold"
+                tools:text = "50 dislike(s)"
+                android:text="@{post.dislikes != 1 ? @string/dislikes(post.dislikes) : @string/dislike(post.dislikes)}"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/hint_color"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textStyle="bold"
+                tools:text="100 comment(s)"
+                android:text="@{post.commentCount != 1 ? @string/comments(post.commentCount) : @string/count_comment(post.commentCount)}"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

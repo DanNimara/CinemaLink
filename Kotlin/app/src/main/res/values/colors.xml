@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue_200">#6a9dff</color>
+    <color name="blue_500">#206fdf</color>
+    <color name="blue_700">#0045ac</color>
+    <color name="orange_200">#ffc053</color>
+    <color name="orange_700">#a86200</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="off_white">#F5F5F5</color>
+    <color name="netflix">#E50914</color>
+    <color name="hbo">#5822B4</color>
+    <color name="disney">#113CCF</color>
+    <color name="amazon">#FF9900</color>
+    <color name="disabled_button">#CCCCCC</color>
+    <color name="dislike_red">#EF5350</color>
+    <color name="purple_comment">#624AA1</color>
+    <color name="background_color_dark">#121212</color>
+    <color name="text_input_background">#2E2E2E</color>
+    <color name="hint_color">#969696</color>
+    <color name="remove_button_tint">#C60505</color>
+    <color name="green">#13AE4B</color>
+</resources>
